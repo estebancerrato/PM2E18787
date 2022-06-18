@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2Examen.Views.listarsitios">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atras" x:Name="toolmenu"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="toolmenu_Clicked"/>
+    </ContentPage.ToolbarItems>
+  
+    
+    
+    
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <ListView x:Name="listasitios" ItemTapped="liestasistios_ItemTapped">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <ViewCell>
+                                <!--  <Grid>
+                                    <Label Grid.Column="0"
+                                       Text="{Binding codigo}"></Label> 
+                                </Grid
+                                -->
+                            </ViewCell>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">                <Grid>                    <Button Text="Eliminar casa" x:Name="btneliminarcas"  WidthRequest="150" Grid.Column="0" Clicked="btneliminacasa_Clicked"/>                    <Button Text="Ver Mapa" x:Name="btnvermapa" WidthRequest="150"  Grid.Column="1" Clicked="btnvermapa_Clicked" />                </Grid>            </RelativeLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

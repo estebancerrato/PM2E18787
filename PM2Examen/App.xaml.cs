@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PM2Examen.Views;
 
 namespace PM2Examen
 {
@@ -10,7 +11,7 @@ namespace PM2Examen
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new listarsitios());
         }
 
         protected override void OnStart()
