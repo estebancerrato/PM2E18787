@@ -10,7 +10,13 @@
          <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="EXAMEN MOVIL 2" HorizontalTextAlignment="Center" TextColor="White" FontSize="18"/>
         </Frame>
-        <Image x:Name="img"  HeightRequest="200" WidthRequest="200" BackgroundColor="Azure" Margin="20,0,20,0" HorizontalOptions="Center" />
+        <Image x:Name="img"  HeightRequest="200" WidthRequest="200" BackgroundColor="Azure" 
+               Margin="20,0,20,0" HorizontalOptions="Center" Source="anadir.jpg">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AddImg" NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+            
+        </Image>
 
         <Label Text="Latitud" FontSize="Subtitle" Padding="30,10,30,0"/>
         <Entry x:Name="txtlatitud"  Margin="30,0,30,0" FontSize="Subtitle" IsReadOnly="True"/>
