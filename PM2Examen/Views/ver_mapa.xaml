@@ -12,7 +12,7 @@
         <StackLayout >
             <maps:Map HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand" x:Name="mapa" IsShowingUser="True"/>
-            <Button Text="Compartir Ubicacion" x:Name="btnCompartir"   Grid.Column="0" />
+            <Button Text="Compartir Ubicacion" x:Name="btnCompartir"   Grid.Column="0" Clicked="btnCompartir_Clicked"/>
         </StackLayout>
         
     </ContentPage.Content>

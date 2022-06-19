@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
+using Plugin.Media;
 
 namespace PM2Examen.Views
 {
@@ -23,6 +24,25 @@ namespace PM2Examen.Views
             mapdescripcion = descripcion;
 
             
+        }
+
+        private async void btnCompartir_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Share.RequestAsync(
+                   new ShareTextRequest
+                   {
+                       Title= "Te comparto la ubicacion",
+                       Text= "Este es el lugar donde me tome la fotografia",
+                       Uri = "https://maps.google.com/?q="+maplongitud+","+maplatitud
+                   }
+                    );
+            }
+            catch
+            {
+
+            }
         }
 
         private void toolmenu_Clicked(object sender, EventArgs e)
