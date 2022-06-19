@@ -30,17 +30,18 @@ namespace PM2Examen.Views
 
         }
 
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             Pin ubicacion = new Pin();
             ubicacion.Label = mapdescripcion.ToString();
-            ubicacion.Position = new Position( Double.Parse(maplongitud), Double.Parse(maplatitud));
+            ubicacion.Type = PinType.Place;
+            ubicacion.Position = new Position(Double.Parse(maplongitud), Double.Parse(maplatitud));
             mapa.Pins.Add(ubicacion);
-
-
-
+            mapa.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(Double.Parse(maplongitud), Double.Parse(maplatitud)), Distance.FromMeters(100.0)));
         }
+
+
 
     }
 }
