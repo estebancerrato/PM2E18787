@@ -5,16 +5,17 @@
              x:Class="PM2Examen.Views.ver_mapa">
 
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Atras"
-                     Clicked="toolmenu_Clicked"/>
-    </ContentPage.ToolbarItems>
+
 
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout >
             <maps:Map HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand" x:Name="mapa" IsShowingUser="True"/>
+            <Button Text="Compartir Ubicacion" x:Name="btnCompartir"   Grid.Column="0" />
         </StackLayout>
+        
     </ContentPage.Content>
+
+
 </ContentPage>
