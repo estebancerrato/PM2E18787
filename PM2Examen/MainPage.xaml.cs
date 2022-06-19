@@ -45,7 +45,7 @@ namespace PM2Examen
             }
             catch (FeatureNotEnabledException fneEx)
             {
-                await DisplayAlert("Advertencia", "Error de Dispositivo "+ fneEx, "Ok");
+                await DisplayAlert("Advertencia", "Error de Dispositivo, validar si su GPS esta activo", "Ok");
             }
             catch (PermissionException pEx)
             {
@@ -105,27 +105,30 @@ namespace PM2Examen
 
         private async void btnagregars_Clicked(object sender, EventArgs e)
         {
-            var sitio = new sitios
+            if (imageToSave == null)
             {
-                imagen = imageToSave,
-                longitud = Int32.Parse(txtlatitud.Text),
-                latitud = Int32.Parse(txtlongitud.Text),
-                descripcion = txtdescripcion.Text
-            };
-            var resultado = await App.BaseDatos.sitioSave(sitio);
-
-            if (resultado != 0)
+                await DisplayAlert("AVISO","Capture una imagen del sitio", "OK");
+            }else if (txtdescripcion.Text == null)
             {
-                await DisplayAlert("Aviso", "Empleado ingresado con Exito!!!", "Ok");
+                await DisplayAlert("AVISO", "Ingrese la descripcion del sitio", "OK");
             }
             else
             {
-                await DisplayAlert("Aviso", "Ha Ocurrido un Error", "Ok");
+                var sitio = new sitios { imagen = imageToSave, longitud = txtlatitud.Text, latitud = txtlongitud.Text, descripcion = txtdescripcion.Text };
+                var resultado = await App.BaseDatos.sitioSave(sitio);
+
+                if (resultado != 0)
+                {
+                    await DisplayAlert("Aviso", "¡Sitio ingresado con exito!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Aviso", "Ha Ocurrido un Error", "OK");
+                }
+
+
+                await Navigation.PopAsync();
             }
-
-
-            await Navigation.PopAsync();
-
         }
     }
 }

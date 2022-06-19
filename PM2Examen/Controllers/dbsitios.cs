@@ -52,13 +52,13 @@ namespace PM2Examen.Controllers
 
         }
         // Obtener Latitud de UbicacionesDB
-        public Task<sitios> ObtenerLongitud(float uLongitud)
+        public Task<sitios> ObtenerLongitud(string uLongitud)
         {
             return dbbase.Table<sitios>().Where(i => i.longitud == uLongitud).FirstOrDefaultAsync();
         }
 
         // Obtener Latitud de UbicacionesDB
-        public Task<sitios> ObtenerLatitud(float uLatitud)
+        public Task<sitios> ObtenerLatitud(string uLatitud)
         {
             return dbbase.Table<sitios>().Where(i => i.latitud == uLatitud).FirstOrDefaultAsync();
         }

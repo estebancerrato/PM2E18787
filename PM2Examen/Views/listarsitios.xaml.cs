@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PM2Examen.Views;
+using PM2Examen.Models;
 
 namespace PM2Examen.Views
 {
@@ -36,6 +37,13 @@ namespace PM2Examen.Views
         {
             //Sintaxis para dirigirnos a otra pantalla
             await Navigation.PushAsync(new ver_mapa());
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
         }
     }
   }
