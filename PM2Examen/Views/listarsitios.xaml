@@ -42,7 +42,7 @@
 
             <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">
                 <Grid>
-                    <Button Text="Eliminar casa" x:Name="btneliminarcas"  WidthRequest="150" Grid.Column="0" Clicked="btneliminacasa_Clicked"/>
+                    <Button Text="Eliminar sitio" x:Name="btneliminarcas"  WidthRequest="150" Grid.Column="0" Clicked="btneliminacasa_Clicked"/>
                     <Button Text="Ver Mapa" x:Name="btnvermapa" WidthRequest="150"  Grid.Column="1" Clicked="btnvermapa_Clicked" />
                 </Grid>
             </RelativeLayout>

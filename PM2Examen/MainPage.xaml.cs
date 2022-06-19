@@ -45,7 +45,7 @@ namespace PM2Examen
             }
             catch (FeatureNotEnabledException)
             {
-                await DisplayAlert("Advertencia", "Error de Dispositivo, validar si su GPS esta activo", "Ok");
+                await DisplayAlert("Advertencia", "Su GPS se encuentra desactivado, favor volver a ingresar con el GPS activado", "Ok");
                 System.Diagnostics.Process.GetCurrentProcess().Kill(); //cerramos la aplicacion hasta que el usuario active el GPS
 
             }
@@ -122,6 +122,10 @@ namespace PM2Examen
                 if (resultado != 0)
                 {
                     await DisplayAlert("Aviso", "¡Sitio ingresado con exito!", "OK");
+                    txtdescripcion.Text = "";
+                    img.Source = "anadir.jpg";
+                    imageToSave = null;
+                    
                 }
                 else
                 {
