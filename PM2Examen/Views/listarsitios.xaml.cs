@@ -11,8 +11,12 @@ using PM2Examen.Models;
 namespace PM2Examen.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
+    
     public partial class listarsitios : ContentPage
     {
+        private sitios sitio;
+
         public listarsitios()
         {
             InitializeComponent();
@@ -22,16 +26,13 @@ namespace PM2Examen.Views
         {
 
         }
-
+       
         private void liestasistios_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-
+           sitio = (sitios)e.Item;
         }
 
-        private void btneliminacasa_Clicked(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private async void btnvermapa_Clicked(object sender, EventArgs e)
         {
@@ -44,6 +45,34 @@ namespace PM2Examen.Views
             base.OnAppearing();
 
             listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
+        }
+
+
+        private async void btneliminacasa_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var eliminar = await App.BaseDatos.eliminarsitio(sitio);
+
+
+                if (eliminar != 0)
+                {
+                    await DisplayAlert("Aviso", "Sitio eliminado !", "Ok");
+                    listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
+
+                }
+                else
+                {
+                    await DisplayAlert("Aviso", "Ha ocurrido un error !", "Ok");
+                }
+            }
+            catch
+            {
+                await DisplayAlert("Aviso", "Favor seleccione que sitio desea eliminar", "Ok");
+            }
+            
+
+            
         }
     }
   }

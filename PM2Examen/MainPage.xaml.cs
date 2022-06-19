@@ -43,7 +43,7 @@ namespace PM2Examen
             {
                 await DisplayAlert("Advertencia", "Este dispositivo no soporta GPS"+ fnsEx, "Ok");
             }
-            catch (FeatureNotEnabledException fneEx)
+            catch (FeatureNotEnabledException)
             {
                 await DisplayAlert("Advertencia", "Error de Dispositivo, validar si su GPS esta activo", "Ok");
                 System.Diagnostics.Process.GetCurrentProcess().Kill(); //cerramos la aplicacion hasta que el usuario active el GPS
