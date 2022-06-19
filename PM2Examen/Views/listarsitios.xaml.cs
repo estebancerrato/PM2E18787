@@ -30,14 +30,18 @@ namespace PM2Examen.Views
         private void liestasistios_ItemTapped(object sender, ItemTappedEventArgs e)
         {
            sitio = (sitios)e.Item;
-        }
 
-    
+            DisplayAlert("Aviso", "Desea ir a la ubicacion indicada", "Aceptar", "Cancelar");
+        }
+      
+
+
 
         private async void btnvermapa_Clicked(object sender, EventArgs e)
         {
+
             //Sintaxis para dirigirnos a otra pantalla
-            await Navigation.PushAsync(new ver_mapa());
+            await Navigation.PushAsync(new ver_mapa(sitio.latitud,sitio.longitud,sitio.descripcion));
         }
 
         protected async override void OnAppearing()

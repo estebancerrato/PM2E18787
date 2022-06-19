@@ -31,7 +31,7 @@ namespace PM2Examen
                 var tokendecancelacion = new System.Threading.CancellationTokenSource();
 
                 var localizacion = await Geolocation.GetLocationAsync(georequest, tokendecancelacion.Token);
-
+                
 
                 if (localizacion != null)
                 {
