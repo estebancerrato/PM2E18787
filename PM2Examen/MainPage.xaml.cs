@@ -112,7 +112,20 @@ namespace PM2Examen
                 latitud = Int32.Parse(txtlongitud.Text),
                 descripcion = txtdescripcion.Text
             };
-            //var resultado = await App.
+            var resultado = await App.BaseDatos.sitioSave(sitio);
+
+            if (resultado != 0)
+            {
+                await DisplayAlert("Aviso", "Empleado ingresado con Exito!!!", "Ok");
+            }
+            else
+            {
+                await DisplayAlert("Aviso", "Ha Ocurrido un Error", "Ok");
+            }
+
+
+            await Navigation.PopAsync();
+
         }
     }
 }

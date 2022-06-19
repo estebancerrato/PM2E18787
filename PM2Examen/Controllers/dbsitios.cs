@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PM2Examen.Controllers
 {
-    internal class dbsitios
+    public class dbsitios
     {
         readonly SQLiteAsyncConnection dbbase;
 
@@ -39,7 +39,7 @@ namespace PM2Examen.Controllers
 
         //con read podemos leer informacion de la tabla 
         //read
-        public Task<List<sitios>> obtnerlistasitios()
+        public Task<List<sitios>> ObtenerlistadoSitio()
 
         {
             return dbbase.Table<sitios>().ToListAsync();

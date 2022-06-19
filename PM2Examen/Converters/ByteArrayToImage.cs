@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Ejercicio1_4_Xamari.Converters
+namespace PM2Examen.Converters
 {
 
     public class ByteArrayToImage : IValueConverter

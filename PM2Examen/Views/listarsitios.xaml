@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:Ejercicio1_4_Xamari.Converters"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:PM2Examen.Converters"
              x:Class="PM2Examen.Views.listarsitios">
 
     <ContentPage.ToolbarItems>
