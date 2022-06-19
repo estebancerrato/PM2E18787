@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:Ejercicio1_4_Xamari.Converters"
              x:Class="PM2Examen.Views.listarsitios">
 
     <ContentPage.ToolbarItems>
@@ -9,10 +9,14 @@
                      Priority="0"
                      Clicked="toolmenu_Clicked"/>
     </ContentPage.ToolbarItems>
-  
-    
-    
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
 
     <ContentPage.Content>
         <StackLayout>
@@ -23,11 +27,13 @@
                         <DataTemplate>
 
                             <ViewCell>
-                                <!--  <Grid>
-                                    <Label Grid.Column="0"
-                                       Text="{Binding codigo}"></Label> 
-                                </Grid
-                                -->
+                                <Grid>
+
+                                    <Image Source="{Binding imagen, Converter={StaticResource ByteToImage}}" Grid.Column="0" />
+                                    <Label Grid.Column="1"
+                                       Text="{Binding descripcion}"></Label>
+                                </Grid>
+
                             </ViewCell>
                         </DataTemplate>
 
@@ -35,7 +41,12 @@
                 </ListView>
             </ScrollView>
 
-            <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">                <Grid>                    <Button Text="Eliminar casa" x:Name="btneliminarcas"  WidthRequest="150" Grid.Column="0" Clicked="btneliminacasa_Clicked"/>                    <Button Text="Ver Mapa" x:Name="btnvermapa" WidthRequest="150"  Grid.Column="1" Clicked="btnvermapa_Clicked" />                </Grid>            </RelativeLayout>
+            <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">
+                <Grid>
+                    <Button Text="Eliminar casa" x:Name="btneliminarcas"  WidthRequest="150" Grid.Column="0" Clicked="btneliminacasa_Clicked"/>
+                    <Button Text="Ver Mapa" x:Name="btnvermapa" WidthRequest="150"  Grid.Column="1" Clicked="btnvermapa_Clicked" />
+                </Grid>
+            </RelativeLayout>
             
         </StackLayout>
     </ContentPage.Content>

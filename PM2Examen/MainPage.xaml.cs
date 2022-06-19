@@ -8,6 +8,9 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Plugin.Media;
 using System.IO;
+using PM2Examen.Views;
+using PM2Examen.Models;
+using PM2Examen.Controllers;
 
 namespace PM2Examen
 {
@@ -86,6 +89,30 @@ namespace PM2Examen
             {
                 await DisplayAlert("Error", "Se ha generado el siguiente error al agregar la imagen "+ex, "Aceptar");
             }
+        }
+
+        private async void btnlistar_Clicked(object sender, EventArgs e)
+        {
+            //Sintaxis para dirigirnos a otra pantalla
+            await Navigation.PushAsync(new listarsitios());
+        }
+
+        private void btnsalir_Clicked(object sender, EventArgs e)
+        {
+            //mandamos un sentesia para que mate el proseso 
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private async void btnagregars_Clicked(object sender, EventArgs e)
+        {
+            var sitio = new sitios
+            {
+                imagen = imageToSave,
+                longitud = Int32.Parse(txtlatitud.Text),
+                latitud = Int32.Parse(txtlongitud.Text),
+                descripcion = txtdescripcion.Text
+            };
+            //var resultado = await App.
         }
     }
 }

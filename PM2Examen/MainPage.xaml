@@ -29,9 +29,9 @@
 
         <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">
             <Grid>
-                <Button Text="Agregar" x:Name="btnAgregar"  WidthRequest="150" Grid.Column="0"/>
-                <Button Text="Listar Sitios" x:Name="btnlistar" WidthRequest="150"  Grid.Column="1"/>
-                <Button Text="Salir" x:Name="btnSalir" WidthRequest="150" HorizontalOptions="Center" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Button Text="Agregar" x:Name="btnAgregar"  WidthRequest="150" Grid.Column="0" Clicked="btnagregars_Clicked"/>
+                <Button Text="Listar Sitios" x:Name="btnlistar" WidthRequest="150"  Grid.Column="1" Clicked="btnlistar_Clicked"/>
+                <Button Text="Salir" x:Name="btnSalir" WidthRequest="150" HorizontalOptions="Center" Grid.Row="1" Grid.ColumnSpan="2" Clicked="btnsalir_Clicked"/> 
             </Grid>
             
         </RelativeLayout>

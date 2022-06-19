@@ -25,7 +25,7 @@ namespace PM2Examen.Controllers
         //hacemos la creacion del crud
 
 
-        public Task<int> personaSave(sitios direcc)
+        public Task<int> sitioSave(sitios direcc)
         {
             if (direcc.id != 0)
             {
@@ -39,14 +39,14 @@ namespace PM2Examen.Controllers
 
         //con read podemos leer informacion de la tabla 
         //read
-        public Task<List<sitios>> obtnerlistadireccion()
+        public Task<List<sitios>> obtnerlistasitios()
 
         {
             return dbbase.Table<sitios>().ToListAsync();
         }
 
         //eliminar
-        public Task<int> eliminarpersonas(sitios direcc)
+        public Task<int> eliminarsitio(sitios direcc)
         {
             return dbbase.DeleteAsync(direcc);
 
