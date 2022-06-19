@@ -13,7 +13,8 @@
 
     <ContentPage.Content>
         <StackLayout>
-           
+            <maps:Map HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand" x:Name="mapa" IsShowingUser="True"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
